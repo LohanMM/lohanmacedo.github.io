@@ -1,0 +1,40 @@
+@import "tailwindcss";
+
+/* Definindo a paleta de cores para fácil reutilização */
+@theme {
+  --color-primary: #5A67D8; /* Azul vibrante para destaque */
+  --color-secondary: #4A5568; /* Cinza escuro para elementos secundários */
+  --color-text-light: #E2E8F0; /* Texto claro */
+  --color-text-dark: #2D3748; /* Texto escuro */
+  --color-background-dark: #1A202C; /* Fundo principal escuro */
+  --color-card-background: #2D3748; /* Fundo de card mais escuro */
+  --color-border: #4A5568; /* Cor da borda */
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply font-sans; /* Fonte padrão mais limpa */
+    background-color: var(--color-background-dark);
+    color: var(--color-text-light);
+    overflow-x: hidden; /* Evita scroll horizontal indesejado */
+
+    /* Fundo de "céu estrelado" ou "grade de engenharia" sutil */
+    background-image: 
+      radial-gradient(circle at 1px 1px, rgba(255,255,255,0.08) 1px, transparent 0);
+    background-size: 40px 40px;
+    background-attachment: fixed;
+  }
+
+  /* Estilo base para elementos interativos (links, botões) */
+  a, button {
+    @apply transition-colors duration-300 ease-in-out;
+  }
+
+  /* Efeito de "vidro" para cards e seções */
+  .glass-effect {
+    @apply bg-white/5 backdrop-blur-lg border border-white/10 shadow-lg;
+  }
+}
